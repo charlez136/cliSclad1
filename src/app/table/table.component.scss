@@ -1,0 +1,43 @@
+@import "../color.scss";
+
+.contenttable {
+  padding-top: 30px;
+}
+
+  .dx-field-value {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    color: $lightgrey;
+  }
+
+.buttpadd {
+  padding-left: 20px;
+}
+
+.contenthis {
+  padding: 20px;
+  border-radius: 5%;
+  background: $white;
+
+  h3 {
+    color: $orange;
+    font-weight: 800;
+  }
+  p {
+    color: $orange;
+    font-weight: 400;
+  }
+}
+
+.dx-viewport {
+  padding-top: 60px;
+}
+
+#editpan {
+  background: $mdgrey;
+}

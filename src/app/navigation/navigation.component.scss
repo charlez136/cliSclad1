@@ -1,0 +1,48 @@
+@import "../color.scss";
+
+.menuVertical {
+  width: 80px;
+  height: 100%;
+  background: $darkgrey;
+
+  .navlist {
+    margin-top: 80px;
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+  a {
+    font-size: 2em;
+    text-align: center;
+    position: relative;
+    display: block;
+    color: $lightgrey;
+    line-height: 2em;
+    padding: 10px 15px;
+  }
+}
+
+.example-sidenav-container {
+  flex: 1;
+}
+.hsubmenu {
+  float: right;
+
+  a {
+    padding: 15px;
+    color: $lightgrey;
+  }
+  a:link {
+    text-decoration: none;
+  }
+}
+
+.mainappclass {
+  height: 100%;
+}
+.contentmain {
+  min-height: 100vh;
+}

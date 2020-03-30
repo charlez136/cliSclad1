@@ -1,0 +1,163 @@
+<div class="contenttable">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div class="col">
+
+          <div class="dx-field">
+            <div class="dx-field-value">
+              <dx-autocomplete
+                  [showClearButton]="true"
+                  [(value)]="partnum"
+                  (onValueChanged)="valuechange()"
+                  [dataSource]="search">
+              </dx-autocomplete>
+          </div>
+        </div>
+
+        </div>
+        <div class="col">
+          <div class="btn-group">
+            <button class="btn btn-warning">Part</button>
+            <button class="btn btn-light">Country</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="row">
+        <div class="col">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Currency</mat-panel-title>
+            </mat-expansion-panel-header>
+            <dx-list
+              itemTemplate="data"
+              [dataSource]="currency"
+              pageLoadMode="scrollBottom"
+            ><div *dxTemplate="let item1 of 'data'">
+              <div>{{item1.namecurrency}}</div>
+          </div></dx-list>
+          </mat-expansion-panel>
+        </div>
+        <div class="col">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Country</mat-panel-title>
+            </mat-expansion-panel-header>
+            <dx-list
+              itemTemplate="data"
+              [dataSource]="country"
+              pageLoadMode="scrollBottom"
+            ><div *dxTemplate="let item of 'data'">
+              <div>{{item.nameCountry}}</div>
+          </div></dx-list>
+        </mat-expansion-panel>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Price History</h2>
+
+  <div class="row" >
+    <div class="col-md-2">
+      <div class="contenthis">
+        <h3>{{oeParts}}</h3>
+        <p>OE Parts</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="contenthis">
+        <h3>{{iamParts}}</h3>
+        <p>lAM Parts</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="contenthis">
+        <h3>{{wholesaler}}</h3>
+        <p>Wholesaler</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="contenthis">
+        <h3>{{rrpAvg}}</h3>
+        <p>RRP Avg</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="contenthis">
+        <h3>{{rrpRange}}</h3>
+        <p>RRP Range</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="dx-viewport">
+
+    <dx-data-grid id="gridContainer"
+    [dataSource]="dataSource"
+    [remoteOperations]="false"
+    [allowColumnReordering]="true"
+    [rowAlternationEnabled]="true"
+    [showBorders]="true"
+    (onContentReady)="contentReady($event)">
+
+    <dxo-paging ></dxo-paging>
+
+    <dxo-editing
+    id="editpan"
+    mode="batch"
+    [allowAdding]="true"
+    [allowUpdating]="true"
+    >
+    </dxo-editing>
+
+
+    <dxo-pager
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[25, 50, 100]"
+    ></dxo-pager>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-header-filter [visible]="true"></dxo-header-filter>
+    <dxi-column [allowHeaderFiltering]="true" caption="Brand Type"  [allowFiltering]="true" dataField="brandType" ></dxi-column>
+    <dxi-column dataField="partNumber" [allowHeaderFiltering]="true" [allowFiltering]="true" caption="Part Number" alignment="right"></dxi-column>
+    <dxi-column [allowHeaderFiltering]="true" caption="Alt Number" [allowFiltering]="true" dataField="altPartNum" alignment="right" [allowGrouping]="false" cssClass="bullet"></dxi-column>
+    <dxi-column [allowHeaderFiltering]="true" caption="Brand" [allowFiltering]="true" dataField="brand" ></dxi-column>
+    <dxi-column [allowHeaderFiltering]="true" caption="Description" [allowFiltering]="true"  dataField="description" dataType="string"></dxi-column>
+    <dxi-column [allowHeaderFiltering]="true" caption="RRP"  [allowFiltering]="true" dataField="rrp" ></dxi-column>
+    <dxi-column [allowHeaderFiltering]="true" caption="Price Date"  [allowFiltering]="true" dataField="priceDate" ></dxi-column>
+    <dxi-column [allowHeaderFiltering]="true" caption="Article Status"  [allowFiltering]="true" dataField="articleStatus"  [width]="150"></dxi-column>
+
+    <div *dxTemplate="let d of 'discountCellTemplate'">
+          <div class="chart-cell">
+              <dx-bullet
+                  [showTarget]="false"
+                  [showZeroLevel]="true"
+                  [startScaleValue]="0"
+                  [endScaleValue]="100"
+                  [value]="d.value * 100">
+                  <dxo-size [width]="150" [height]="40"></dxo-size>
+                  <dxo-tooltip
+                      [enabled]="true"
+                      [paddingTopBottom]="2"
+                      [customizeTooltip]="customizeTooltip">
+                      <dxo-font [size]="18"></dxo-font>
+                  </dxo-tooltip>
+                  <dxo-margin
+                      [top]="5"
+                      [bottom]="0"
+                      [left]="5"
+                  ></dxo-margin>
+              </dx-bullet>
+          </div>
+      </div>
+</dx-data-grid>
+
+
+  </div>
+
+
+</div>
