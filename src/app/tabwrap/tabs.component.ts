@@ -8,6 +8,9 @@ import {
     
   } from '@angular/core';
   
+  import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+
+  
   import { TabComponent } from './tab.component';
   import { DynamicTabsDirective } from './dynamic-tabs.directive';
   
@@ -31,6 +34,14 @@ import {
         this.selectTab(this.tabs.first);
       }
     }
+
+
+    drop(event: CdkDragDrop<TabComponent[]>) {
+        moveItemInArray(this.dynamicTabs, event.previousIndex, event.currentIndex);
+      }
+
+
+
   
     openTab(title: string, template, data, isCloseable = false) {
       const componentFactory = this._componentFactoryResolver.resolveComponentFactory(
