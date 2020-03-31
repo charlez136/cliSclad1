@@ -42,6 +42,9 @@ import { AlertComponent } from './_components';
 import { tablcompComponent } from './tablcomp/tablcomp.component';
 import { tabwrapComponent } from './tabwrap/tabwrap.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import {DynamicTabsDirective} from './tabwrap/dynamic-tabs.directive';
+import {TabComponent} from './tabwrap/tab.component';
+import {TabsComponent} from './tabwrap/tabs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +57,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     RegisterComponent,
     AlertComponent,
     tablcompComponent,
-    tabwrapComponent
+    tabwrapComponent,
+    DynamicTabsDirective,
+    TabComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +89,8 @@ import { MatTabsModule } from '@angular/material/tabs';
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 fakeBackendProvider
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [TabComponent]
 
 })
 export class AppModule { }

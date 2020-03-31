@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input,enableProdMode } from '@angular/core';
+import { Component, OnInit, OnDestroy, enableProdMode} from '@angular/core';
 import{ HttpClient }from '@angular/common/http'
 import { timer, Subscription } from 'rxjs';
 import {FormControl} from '@angular/forms';
@@ -31,8 +31,7 @@ export class TableComponent implements OnInit, OnDestroy {
   country:DataSource;
   currency:DataSource;
 
-  @Input() public data: any;
-  @Input() public name: any;
+
 
   myControl = new FormControl();
   options: string[] = ['One', 'Two', 'Three'];
@@ -57,7 +56,6 @@ valuechange(){
         startWith(''),
         map(value => this._filter(value))
       );
-    console.log(`init: tab ${this.name}`);
     this.timerSubscription = timer(1000, 2000).subscribe(val => console.log(val));
   }
 
@@ -86,7 +84,6 @@ customizeTooltip = (pointsInfo) => {
 }
 
   public ngOnDestroy() {
-    console.log(`destroy: tab ${this.name}`);
     this.timerSubscription.unsubscribe();
   }
 
