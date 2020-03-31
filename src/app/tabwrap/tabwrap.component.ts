@@ -1,30 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild,Output,EventEmitter } from '@angular/core';
+
+import { TabsComponent } from './tabs.component';
 
 @Component({
-  selector: 'app-tabwrap',
-  templateUrl: './tabwrap.component.html',
-  styleUrls: ['./tabwrap.component.scss']
+  selector: 'my-tabwr',
+  templateUrl: './tabwrap.component.html'
 })
 export class tabwrapComponent {
+  @ViewChild('contenttable') TableTab;
+  @Output() addTable = new EventEmitter<any>();
+  @ViewChild(TabsComponent) tabsComponent;
 
-  public tabs: { label: string, formSrc: string }[];
 
-  constructor() {
-    this.createFakeTabs();
-  }
 
-  public selectedTabChanged() {
-    console.log('tab changed');
-  }
-
-  private createFakeTabs() {
-    const tabs = [
-      { label: 'zero', formSrc: 'content for zero' },
-      { label: 'one', formSrc: 'content for one' },
-      { label: 'two', formSrc: 'content for two' },
-    ];
-
-    this.tabs = tabs;
+  addinnewTable(){
+    this.addTable.emit()
+    this.tabsComponent.openTab('New Tab', this.TableTab, {}, true);
+    
   }
 
 }

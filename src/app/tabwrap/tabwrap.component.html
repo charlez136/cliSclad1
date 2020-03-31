@@ -1,7 +1,6 @@
-<mat-tab-group animationDuration="0ms"  >
-  <mat-tab *ngFor="let tab of tabs; let i = index" [label]="tab.label">
-    <ng-template matTabContent>
-      <app-table [name]="i" [data]="tab.formSrc"></app-table>
-    </ng-template>
-  </mat-tab>
-</mat-tab-group>
+<my-tabs >
+  <my-tab [tabTitle]="'Table 1'">
+  </my-tab>
+</my-tabs>
+<button class="btn btn-default"  (click)=" addinnewTable()">Add Tabl</button>
+

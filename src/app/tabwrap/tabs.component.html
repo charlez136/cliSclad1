@@ -1,0 +1,12 @@
+
+<ul cdkDropList (cdkDropListDropped)="drop($event)" class="nav nav-tabs">
+    <li cdkDrag class="nav-item"  *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+      <a  class="nav-link active">{{tab.title}}</a>
+    </li>
+
+    <li cdkDrag  class="nav-item" *ngFor="let tab of dynamicTabs" (click)="selectTab(tab)" [class.active]="tab.active">
+      <a  class="nav-link active ">{{tab.title}} <span class="fas fa-times" *ngIf="tab.isCloseable" (click)="closeTab(tab)"></span></a>
+    </li>
+  </ul>
+  <ng-content></ng-content>
+  <ng-template dynamic-tabs #container></ng-template>
