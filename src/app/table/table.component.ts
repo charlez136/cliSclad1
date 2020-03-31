@@ -44,7 +44,6 @@ export class TableComponent implements OnInit, OnDestroy {
     this.search = this.service.getDataAutocomlete();
     this.country=this.service.getlistcountry();
     this.currency=this.service.getCurrency();
-    this.getSummery(this.partnum);
 
   }
 valuechange(){
