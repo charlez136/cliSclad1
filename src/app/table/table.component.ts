@@ -23,7 +23,7 @@ export class TableComponent implements OnInit, OnDestroy {
   wholesaler:string;
   rrpAvg:string;
   rrpRange:string;
-  partnum='h657i';
+  partnum='';
   response: any;
   dataSource: DataSource;
   collapsed = false;
