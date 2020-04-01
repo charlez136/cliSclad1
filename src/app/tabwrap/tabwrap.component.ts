@@ -4,7 +4,12 @@ import { TabsComponent } from './tabs.component';
 
 @Component({
   selector: 'my-tabwr',
-  templateUrl: './tabwrap.component.html'
+  templateUrl: './tabwrap.component.html',
+  styles:[`
+  .addbtn{
+    padding-bottom:20px;
+  }
+  `],
 })
 export class tabwrapComponent {
   @ViewChild('contenttable') TableTab;

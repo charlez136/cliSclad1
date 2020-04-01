@@ -5,14 +5,11 @@
 }
 
   .dx-field-value {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    color: $lightgrey;
+    padding-top: 5px;
+    position: absolute ;
+    width: 84% !important;
+    display: block ;
+   
   }
 
 .buttpadd {
