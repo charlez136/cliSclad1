@@ -11,6 +11,7 @@ import {  MatListModule} from '@angular/material/list';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { DxDataGridModule,
@@ -81,7 +82,7 @@ import {TabsComponent} from './tabwrap/tabs.component';
     DxTreeListModule,
     MatTabsModule,
     MatExpansionModule,
-    MatAutocompleteModule,DxAutocompleteModule,DxListModule,
+    MatAutocompleteModule,DxAutocompleteModule,DxListModule,DragDropModule,
 
   ],
   providers: [
