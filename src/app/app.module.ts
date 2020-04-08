@@ -46,6 +46,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {DynamicTabsDirective} from './tabwrap/dynamic-tabs.directive';
 import {TabComponent} from './tabwrap/tab.component';
 import {TabsComponent} from './tabwrap/tabs.component';
+import { SummaryComponent } from './summary/summary.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,8 @@ import {TabsComponent} from './tabwrap/tabs.component';
     tabwrapComponent,
     DynamicTabsDirective,
     TabComponent,
-    TabsComponent
+    TabsComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

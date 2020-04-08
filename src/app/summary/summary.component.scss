@@ -1,0 +1,15 @@
+@import "../color.scss";
+.contenthis {
+    padding: 20px;
+    border-radius: 5%;
+    background: $white;
+  
+    h3 {
+      color: $orange;
+      font-weight: 800;
+    }
+    p {
+      color: $orange;
+      font-weight: 400;
+    }
+  }

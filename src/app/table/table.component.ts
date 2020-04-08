@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy, enableProdMode} from '@angular/core';
-import{ HttpClient }from '@angular/common/http'
+import { Component, OnInit, OnDestroy, enableProdMode,ChangeDetectorRef, DoCheck, ChangeDetectionStrategy} from '@angular/core';
+import{ HttpClient }from '@angular/common/http';
 import { timer, Subscription } from 'rxjs';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
+import {tablcompComponent} from '../tablcomp/tablcomp.component';
 import {map, startWith} from 'rxjs/operators';
 import { tablcompService } from '../_services/tablcomp.service';
 import DataSource from 'devextreme/data/data_source';
@@ -15,16 +16,12 @@ if(!/localhost/.test(document.location.host)) {
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
-  providers: [tablcompService]
+  providers: [tablcompService],
+
 })
 export class TableComponent implements OnInit, OnDestroy {
-  oeParts:string;
-  iamParts:string;
-  wholesaler:string;
-  rrpAvg:string;
-  rrpRange:string;
-  partnum='';
-  response: any;
+  partnum:string;
+  tablc:tablcompComponent;
   dataSource: DataSource;
   collapsed = false;
   search: DataSource;
@@ -38,18 +35,15 @@ export class TableComponent implements OnInit, OnDestroy {
   filteredOptions: Observable<string[]>;
 
   private timerSubscription: Subscription;
+ 
 
-  constructor(private service: tablcompService,private http:HttpClient) {
+  constructor(private service: tablcompService,private cdRef: ChangeDetectorRef) {
     this.search = this.service.getDataAutocomlete();
     this.country=this.service.getlistcountry();
     this.currency=this.service.getCurrency();
 
   }
-valuechange(){
-  this.dataSource = this.service.getDataSource(this.partnum);
-  this.getSummery(this.partnum);
 
-}
   public ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
@@ -66,17 +60,6 @@ valuechange(){
     }
 };
 
-getSummery(partnum:string){
-  this.http.get('http://localhost:8080/summary/'+partnum).subscribe((response)=>{
-    this.response=response;
-    this.oeParts= this.response.oeParts;
-    this.iamParts= this.response.iamParts;
-    this.wholesaler= this.response.wholesaler;
-    this.rrpAvg= this.response.rrpAvg;
-    this.rrpRange= this.response.rrpRange;
-  })
-
-}
 
 
 customizeTooltip = (pointsInfo) => {
