@@ -12,6 +12,7 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatMenuModule} from '@angular/material/menu';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { DxDataGridModule,
@@ -26,7 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FaSymbol, FlipProp, IconProp, PullProp, RotateProp, SizeProp, Styles, Transform } from '@fortawesome/fontawesome-svg-core';
 
 
-import { fakeBackendProvider } from './_helpers';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -84,13 +85,13 @@ import { SummaryComponent } from './summary/summary.component';
     DxTreeListModule,
     MatTabsModule,
     MatExpansionModule,
-    MatAutocompleteModule,DxAutocompleteModule,DxListModule,DragDropModule,
+    MatAutocompleteModule,DxAutocompleteModule,DxListModule,DragDropModule,MatMenuModule
 
   ],
   providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-fakeBackendProvider
+
   ],
   bootstrap: [AppComponent],
   entryComponents: [TabComponent]

@@ -9,7 +9,13 @@
     <a class="fas fa-star" routerLink="" routerLinkActive="active"></a>
       <a class="fas fa-bell" routerLink="table" routerLinkActive="active"></a>
       <a class="fas fa-cubes" routerLink="favourite" routerLinkActive="active"></a>
-      <button routerLink="/login" type="button" class="btn btn-outline-warning ">Войти</button>
+      <div *ngIf="currentUser; then thenBlock else elseBlock"> </div>
+      <ng-template #thenBlock><button mat-button [matMenuTriggerFor]="menu">{{currentUser.firstName}}</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>{{currentUser.username}}</button>
+          <button mat-menu-item (click)="onlogoutcl()">Выйти</button>
+        </mat-menu></ng-template>
+      <ng-template #elseBlock><button routerLink="/login" type="button" class="btn btn-outline-warning ">Войти</button></ng-template>
   </div>
   </mat-toolbar-row>
 </mat-toolbar>

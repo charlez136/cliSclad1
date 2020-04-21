@@ -5,17 +5,18 @@ import { User } from '../_models';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
+    baseurl='http://localhost:8080/authorisation';
     constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<User[]>(`/users`);
+        return this.http.get<User[]>(`${this.baseurl}/users`);
     }
 
     register(user: User) {
-        return this.http.post(`/users/register`, user);
+        return this.http.get(`${this.baseurl}/add/${user.username}/${user.password}/${user.lastName}/${user.firstName}`);
     }
 
-    delete(id: number) {
-        return this.http.delete(`/users/${id}`);
+    delete(username: string) {
+        return this.http.delete(`${this.baseurl}/delete/${username}`);
     }
 }
