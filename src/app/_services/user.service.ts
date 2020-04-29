@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment'; 
 import { User } from '../_models';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-    baseurl='http://localhost:8080/authorisation';
     constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<User[]>(`${this.baseurl}/users`);
+        return this.http.get<User[]>(`${environment.baseurlauth}/users`);
     }
 
     register(user: User) {
-        return this.http.get(`${this.baseurl}/add/${user.username}/${user.password}/${user.lastName}/${user.firstName}`);
+        return this.http.get(`${environment.baseurlauth}/add/${user.username}/${user.password}/${user.lastName}/${user.firstName}`);
     }
 
     delete(username: string) {
-        return this.http.delete(`${this.baseurl}/delete/${username}`);
+        return this.http.delete(`${environment.baseurlauth}/delete/${username}`);
     }
 }

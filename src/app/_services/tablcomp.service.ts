@@ -5,6 +5,7 @@ import CustomStore from "devextreme/data/custom_store";
 import DataSource from 'devextreme/data/data_source';
 import { catchError, map  } from 'rxjs/operators';
 import {LoadOptions} from 'devextreme/data/load_options';
+import { environment } from 'src/environments/environment'; 
 import {  of } from 'rxjs';
 
 
@@ -18,7 +19,7 @@ export class tablcompService {
     getDataSource(partnum:string)  {
         return new DataSource({
           load: (loadOptions: LoadOptions) => {
-            return this.httpClient.get<any[]>('http://localhost:8080/db/'+partnum)
+            return this.httpClient.get<any[]>(`${environment.baseurl}/db/${partnum}`)
               .pipe(
                 map(res => {
                   return {
@@ -41,7 +42,7 @@ export class tablcompService {
     getDataAutocomlete( )  {
       return new DataSource({
         load: (loadOptions: LoadOptions) => {
-          return this.httpClient.get<any[]>('http://localhost:8080/partnum')
+          return this.httpClient.get<any[]>(`${environment.baseurl}/partnum`)
             .pipe(
               map(res => {
                 return {
@@ -65,7 +66,7 @@ export class tablcompService {
     getlistcountry() {
       return new DataSource({
         load: (loadOptions: LoadOptions) => {
-          return this.httpClient.get<any[]>('http://localhost:8080/country')
+          return this.httpClient.get<any[]>(`${environment.baseurl}/country`)
             .pipe(
               map(res => {
                 return {
@@ -90,7 +91,7 @@ export class tablcompService {
     getCurrency() {
       return new DataSource({
         load: (loadOptions: LoadOptions) => {
-          return this.httpClient.get<any[]>('http://localhost:8080/currency')
+          return this.httpClient.get<any[]>(`${environment.baseurl}/currency`)
             .pipe(
               map(res => {
                 return {
