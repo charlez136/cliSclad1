@@ -1,0 +1,111 @@
+$darkgrey: #464343;
+$lightgrey: #ccc;
+$white:#fff;
+$orange:#ffc107;;
+$mdgrey:#6c757d;
+
+
+
+
+
+$font-size-small:              0.8571em     !default;
+
+$border-radius-none:             0px !default;
+$border-radius-btn-small:      26px !default;
+$border-radius-btn-base:       20px !default;
+$border-radius-btn-large:      50px !default;
+
+$white-color:                #FFFFFF !default;
+$primary-color:              #51cbce !default;
+$danger-color:               #ef8157 !default;
+$warning-color:              #fbc658 !default;
+$info-color:                 #51bcda !default;
+$success-color:              #6bd098 !default;
+$dark-gray:                  #9A9A9A !default;
+$default-color:              #66615B !default;
+
+
+$dark-gray:                  #9A9A9A !default;
+$light-gray:                 #E3E3E3 !default;
+
+$opacity-8:                  rgba(255,255,255, .8) !default;
+
+
+$black-color:                #2c2c2c !default;
+$brand-primary:              $primary-color !default;
+$brand-info:                 $info-color !default;
+$brand-success:              $success-color !default;
+$brand-warning:              $warning-color !default;
+$brand-danger:               $danger-color !default;
+$brand-inverse:              $black-color !default;
+
+$margin-bottom:                0 0 10px 0 !default;
+$border-radius-small:           3px !default;
+$border-radius-base:            4px !default;
+$border-radius-large:           6px !default;
+$border-radius-x-large:         8px !default;
+$border-radius-extreme:         12px !default;
+
+$card-black-color:          #252422 !default;
+$card-muted-color:          #ccc5b9 !default;
+
+$card-background-blue:      #b8d8d8 !default;
+$card-font-blue:            #506568 !default;
+$card-subtitle-blue:        #7a9e9f !default;
+
+$card-background-green:      #d5e5a3 !default;
+$card-font-green:            #60773d !default;
+$card-subtitle-green:        #92ac56 !default;
+
+$card-background-yellow:      #ffe28c !default;
+$card-font-yellow:            #b25825 !default;
+$card-subtitle-yellow:        #d88715 !default;
+
+$card-background-brown:      #d6c1ab !default;
+$card-font-brown:            #75442e !default;
+$card-subtitle-brown:        #a47e65 !default;
+
+$card-background-purple:      #baa9ba !default;
+$card-font-purple:            #3a283d !default;
+$card-subtitle-purple:        #5a283d !default;
+
+$card-background-orange:      #ff8f5e !default;
+$card-font-orange:            #772510 !default;
+$card-subtitle-orange:        #e95e37 !default;
+
+$margin-large-vertical:        30px !default;
+$margin-base-vertical:         15px !default;
+
+
+$height-base:                  40px         !default;
+
+$btn-icon-size:                 3.5rem       !default;
+$btn-icon-size-regular:         2.375rem      !default;
+$btn-icon-font-size-regular:    0.9375rem     !default;
+$btn-icon-font-size-small:      0.6875rem      !default;
+$btn-icon-size-small:           1.875rem     !default;
+$btn-icon-font-size-lg:         1.325rem     !default;
+$btn-icon-size-lg:              3.6rem         !default;
+
+$font-size-h1:                 3.5em        !default; // ~ 49px
+$font-size-h2:                 2.5em        !default; // ~ 35px
+$font-size-h3:                 2em          !default; // ~ 28px
+$font-size-h4:                 1.714em      !default; // ~ 24px
+$font-size-h5:                 1.57em       !default; // ~ 22px
+$font-size-h6:                 1em          !default; // ~ 14px
+
+$font-paragraph:               1em          !default;
+$font-size-navbar:             1em          !default;
+$font-size-mini:               0.7142em     !default;
+$font-size-small:              0.8571em     !default;
+$font-size-base:               14px         !default;
+$font-size-large:              1rem         !default;
+$font-size-large-navbar:       20px         !default;
+$font-size-blockquote:         1.1em        !default; // ~ 15px
+$font-size-medium:             16px         !default;
+$font-size-xs:                 12px         !default;
+
+$font-weight-light:             300         !default;
+$font-weight-normal:            400         !default;
+$font-weight-semi:              600         !default;
+$font-weight-bold:              700         !default;

@@ -25,7 +25,9 @@
       <a class="fas fa-home" routerLink="" routerLinkActive="active"></a>
       <a class="fas fa-window-restore" routerLink="table" routerLinkActive="active"></a>
       <a class="fas fa-star" routerLink="favourite" routerLinkActive="active"></a>
-      <a class="fas fa-user" outerLink="user" routerLinkActive="active"></a>
+      <div *ngIf="currentUser">
+      <a class="fas fa-user" routerLink="user" routerLinkActive="active"></a>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
     <div class="jumbotron jumbotron-fluid contentmain ">
