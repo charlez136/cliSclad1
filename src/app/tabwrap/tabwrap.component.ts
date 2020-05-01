@@ -1,4 +1,4 @@
-import { Component, ViewChild,Output,EventEmitter } from '@angular/core';
+import { Component, ViewChild,Output,EventEmitter,AfterContentInit } from '@angular/core';
 
 import { TabsComponent } from './tabs.component';
 
@@ -11,15 +11,15 @@ import { TabsComponent } from './tabs.component';
   }
   `],
 })
-export class tabwrapComponent {
+export class tabwrapComponent  {
   @ViewChild('contenttable') TableTab;
   @Output() addTable = new EventEmitter<any>();
   @ViewChild(TabsComponent) tabsComponent;
 
 
-
   addinnewTable(){
     this.addTable.emit()
+
     this.tabsComponent.openTab('New Tab', this.TableTab, {}, true);
     
   }

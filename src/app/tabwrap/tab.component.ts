@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, OnInit } from '@angular/core';
+import {TabItem} from '../_models/tab';
 
 @Component({
   selector: 'my-tab',
@@ -15,13 +16,20 @@ import { Component, Input } from '@angular/core';
       <ng-container >
       <app-table></app-table>
       </ng-container>
+
     </div>
   `
 })
-export class TabComponent {
+export class TabComponent  {
   @Input('tabTitle') title: string;
   @Input() active = false;
   @Input() isCloseable = false;
   @Input() template;
   @Input() dataContext;
+  tab:TabItem;
+  constructor(){
+    this.tab = new TabItem()
+  }
+
+
 }
